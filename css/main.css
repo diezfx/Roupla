@@ -40,5 +40,7 @@ form-button {
     background-color: #721c24;
 }
 
-#mapid { height: 25em;
-    width: 50em;}
+#mapid {
+    height: 25rem;
+    width: 100%;
+}
