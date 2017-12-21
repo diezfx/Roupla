@@ -1,0 +1,44 @@
+.bg-1 {
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+}
+
+.bg-2 {
+    background-color: #474e5d; /* Dark Blue */
+    color: #ffffff;
+}
+
+.container-fluid {
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: #1e7e34;
+    color: white;
+
+    text-align: center;
+
+    font-size: 16px;
+    height: 2em;
+
+}
+
+form-button {
+    line-height: 50px;
+    font-size: 16px;
+}
+
+.form-input {
+    height: 2em;
+    width: 5em
+}
+
+
+.col-6{
+    background-color: #721c24;
+}
+
+#mapid { height: 25em;
+    width: 50em;}
