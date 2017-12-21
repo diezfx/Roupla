@@ -28,40 +28,48 @@
 
 <div class="container-fluid bg-2">
 
-    <div class="row">
 
-        <div class="col">
-
-            <div class="form-group">
-                <label for="lat">Latitude:</label>
-                <input type="number" class="form-input" id="lat">
+    <div class="form-row row-eq-height">
+        <div class="col-md-2 col-sm-6 align-self-center">
+            <div class="form-group row">
+                <label for="lat" class="col-sm-4 col-form-label">Latitude:</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="lat" placeholder="Latitude">
+                </div>
             </div>
         </div>
-        <div class="col">
 
-            <div class="form-group">
-                <label for="long">Longitude:</label>
-                <input type="number" class="form-input" id="long">
+
+        <div class="col-md-2 col-sm-6">
+
+            <div class="form-group row">
+                <label for="lat" class="col-sm-4 col-form-label">Longitude:</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="long" placeholder="Longitude">
+                </div>
             </div>
-
         </div>
+        <div class="col-md-2">
+            <div class="form-group row">
+                <div class="col-md-2 align-self-center">
+
+                    <button class="btn " id="buttonInput">Ort besuchen</button>
 
 
-        <div class="col ">
-            <button class="button " id="buttonInput">Ort besuchen</button>
-
+                </div>
+        </div>
+        </div>
+    </div>
         </div>
     </div>
 
 
-</div>
-
 <div class="container-fluid bg-1">
     <div class="row">
-        <div class="col">
+        <div class="col-sm-12 col-md-9" id="mapcol">
             <div id="mapid"></div>
         </div>
-        <div class="col">
+        <div class="col-3">
             <p>Start:
             </p>
             <p>Ziel:
