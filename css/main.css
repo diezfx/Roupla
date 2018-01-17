@@ -13,30 +13,39 @@
     padding-bottom: 1em;
 }
 
-.button {
-    background-color: #4CAF50; /* Green */
-    border: #1e7e34;
-    color: white;
-
-    text-align: center;
-
-    font-size: 16px;
+.btn {
     height: 100%;
 
+
+
 }
 
-
-.form-input {
-    height: 2em;
-    width: 5em
-}
-
-
-.col-6{
-    background-color: #721c24;
-}
 
 #mapid {
     height: 25rem;
-    width: 100%;
+    width: 90%;
+    margin: auto;
 }
+
+.btn-dark {
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    vertical-align: middle;
+
+    height: 2.5rem;
+
+}
+
+.well {
+    background-color: rgba(0, 5, 0, 0.47);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    padding-left: 0.5rem;
+
+}
+
+
