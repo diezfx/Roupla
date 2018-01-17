@@ -36,6 +36,8 @@ $(document).ready(function (e) {
 
     mymap.on('click', onMapClick);
 
+    readgeoJson("")
+
     var coords = [[-0.09, 51.505], [-25, 23]];
     drawRoute(coords);
 
@@ -50,7 +52,16 @@ function clickedOnMap(e) {
 }
 
 
-function readJson(adress) {
+function readgeoJson(adress) {
+
+    $.getJSON("adress/geo.geojson", function (data) {
+        var items = [];
+        $.each(data, function (key, val) {
+            items.push("<li id='" + key + "'>" + val + "</li>");
+        });
+
+        console.log("test");
+    });
 
 
 }
