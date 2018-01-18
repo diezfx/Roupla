@@ -1,4 +1,5 @@
 var mymap
+var drawData
 
 
 function initMap() {
@@ -32,14 +33,8 @@ $(document).ready(function (e) {
 
 
     mymap = initMap();
-
-
-    mymap.on('click', onMapClick);
-
-    readgeoJson("")
-
-    var coords = [[-0.09, 51.505], [-25, 23]];
-    drawRoute(coords);
+    console.log("waaaarum")
+    readgeoJson("");
 
 
 });
@@ -54,15 +49,20 @@ function clickedOnMap(e) {
 
 function readgeoJson(adress) {
 
-    $.getJSON("adress/geo.geojson", function (data) {
-        var items = [];
-        $.each(data, function (key, val) {
-            items.push("<li id='" + key + "'>" + val + "</li>");
-        });
+    $.getJSON(adress + "geo.geojson", function (data) {
+        console.log(data)
+        updateData(data)
 
-        console.log("test");
+
     });
 
+}
+
+function updateData(data) {
+
+    drawData = data;
+
+    drawGeoJson()
 
 }
 
@@ -71,28 +71,23 @@ function clickedOnFlyButton(coords) {
     mymap.flyTo(coords, 15);
 }
 
-function drawRoute(list_coords) {
+
+function drawGeoJson() {
 
 
-    var myLine = [{
-        "type": "LineString",
-        "coordinates": list_coords
-    }
+    // L.geoJSON(data, {
+    //    style: myStyle
+    //}).addTo(mymap);
 
-    ];
+    console.log(drawData["geometry"]["coordinates"]);
 
 
-    var myStyle = {
-        "color": "#103dff",
-        "weight": 5,
-        "opacity": 0.65
-    };
-
-    L.geoJSON(myLine, {
-        style: myStyle
+    L.geoJSON(drawData, {
+        style: {color: "#ff0000"}
     }).addTo(mymap);
 
-    center_route(list_coords);
+    center_route(drawData["geometry"]["coordinates"])
+
 }
 
 
