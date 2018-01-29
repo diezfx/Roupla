@@ -1,5 +1,5 @@
 .bg-1 {
-    background-color: #1abc9c; /* Green */
+    background-color: #f0f0ff; /* Green */
     color: #ffffff;
 }
 
@@ -10,7 +10,7 @@
 
 .container-fluid {
     padding-top: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
 }
 
 .btn {
@@ -22,8 +22,8 @@
 
 
 #mapid {
-    height: 25rem;
-    width: 90%;
+    height: 30rem;
+    width: 100%;
     margin: auto;
 }
 

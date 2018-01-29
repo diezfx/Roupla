@@ -29,42 +29,42 @@ function initMap() {
 $(document).ready(function (e) {
 
 
-    var currentselected = currentSelect.start;
 
 
     mymap = initMap();
-    console.log("waaaarum")
-    readgeoJson("");
+    readGeoJson("");
 
 
 });
 
 function clickedOnMap(e) {
 
-    alert("You clicked the map at " + e.latlng);
+
+    var text = initgoalstrtext($('#stglSelect > .btn.active')[0].id)
+
+    console.log(text)
+
+    var latlng = e.latlng
+
+
+    text.text(latlng.lat.toFixed(2) + "     " + latlng.lng.toFixed(2))
 
 
 }
 
 
-function readgeoJson(adress) {
+function readGeoJson(adress) {
 
     $.getJSON(adress + "geo.geojson", function (data) {
         console.log(data)
-        updateData(data)
+        drawGeoJson(data)
 
 
     });
 
 }
 
-function updateData(data) {
 
-    drawData = data;
-
-    drawGeoJson()
-
-}
 
 
 function clickedOnFlyButton(coords) {
@@ -72,14 +72,17 @@ function clickedOnFlyButton(coords) {
 }
 
 
-function drawGeoJson() {
+// reads the geoJson data and draws it on the map
+function drawGeoJson(data) {
 
 
     // L.geoJSON(data, {
     //    style: myStyle
     //}).addTo(mymap);
 
-    console.log(drawData["geometry"]["coordinates"]);
+    drawData = data
+
+    console.log(["geometry"]["coordinates"]);
 
 
     L.geoJSON(drawData, {
@@ -91,7 +94,8 @@ function drawGeoJson() {
 }
 
 
-// expection: first and last are most important
+// assumption: first and last are most important
+// zooms out to show the whole route
 function center_route(list_coords) {
 
     var bounds = [list_coords[0],
@@ -117,10 +121,6 @@ function swap(x) {
 }
 
 
-currentSelect = {
-    start: 0,
-    goal: 1
-}
 
 
 

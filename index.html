@@ -29,8 +29,8 @@
 <div class="container-fluid bg-2">
 
 
-    <div class="form-row row-eq-height">
-        <div class="col-lg-3 col-sm-6 align-self-center">
+    <div class="form-row ">
+        <div class="col-lg-3 col-sm-6 ">
             <div class="form-group row">
                 <label for="lat" class="col-lg-3 col-sm-6  col-form-label">Latitude:</label>
                 <div class="col-lg-6 col-sm-8 ">
@@ -51,7 +51,7 @@
         </div>
         <div class="col-md-2">
             <div class="form-group row">
-                <div class="col-md-2 align-self-center">
+                <div class="col-md-2 ">
 
                     <button class="btn " id="buttonInput">Ort besuchen</button>
 
@@ -66,7 +66,7 @@
 
 <div class="container-fluid bg-1">
     <div class="row">
-        <div class="col-sm-12 col-md-9" id="mapcol">
+        <div class="col-sm-12 col-md-8" id="mapcol">
             <div id="mapid"></div>
         </div>
         <div class="col-3">
@@ -74,14 +74,14 @@
 
             <div class="row">
                 <div class="col-4 ">
-                    <div class="btn-group-vertical " data-toggle="buttons">
+                    <div class="btn-group-vertical " data-toggle="buttons" id="stglSelect">
 
-                        <label class="btn btn-dark rounded active" name="options">
+                        <label class="btn btn-dark rounded active" id="startbtn" name="options">
                             <input type="radio" checked autocomplete="off"> Start
                         </label>
 
 
-                        <label class="btn btn-dark rounded  " name="options">
+                        <label class="btn btn-dark rounded" id="goalbtn" name="options">
                             <input type="radio" autocomplete="off"> Ziel
                         </label>
 
@@ -91,7 +91,8 @@
 
 
                 <div class="col-8">
-                    <div class="well align-text-bottom">Test</div>
+                    <div class="well align-text-bottom" id="startbtntext">Test</div>
+                    <div class="well align-text-bottom" id="goalbtntext">Test</div>
                 </div>
             </div>
 
