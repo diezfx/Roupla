@@ -3,11 +3,9 @@ var drawData
 
 
 function initMap() {
-
+    // starting location
     var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-
-    // specify clicklistener
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -16,55 +14,20 @@ function initMap() {
         accessToken: 'pk.eyJ1IjoidmFqYXIiLCJhIjoiY2piZ2t3NmRjMzh0ODMybm8ybDU2eTJ0bSJ9.TengI7-dpODq_2Z5_6HYCA'
     }).addTo(mymap);
 
-
+    // specify clicklistener
     mymap.on('click', clickedOnMap);
 
-
     return mymap;
-
 
 }
 
 
 $(document).ready(function (e) {
-
-
-
-
     mymap = initMap();
     readGeoJson("");
 
 
 });
-
-function clickedOnMap(e) {
-
-
-    var text = initgoalstrtext($('#stglSelect > .btn.active')[0].id)
-
-    console.log(text)
-
-    var latlng = e.latlng
-
-
-    text.text(latlng.lat.toFixed(2) + "     " + latlng.lng.toFixed(2))
-
-
-}
-
-
-function readGeoJson(adress) {
-
-    $.getJSON(adress + "geo.geojson", function (data) {
-        console.log(data)
-        drawGeoJson(data)
-
-
-    });
-
-}
-
-
 
 
 function clickedOnFlyButton(coords) {
@@ -72,7 +35,7 @@ function clickedOnFlyButton(coords) {
 }
 
 
-// reads the geoJson data and draws it on the map
+// reads geoJson data and draws it on the map
 function drawGeoJson(data) {
 
 
